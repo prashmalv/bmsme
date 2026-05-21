@@ -96,9 +96,10 @@ export default async function handler(req, res) {
   if (!apiKey) return res.status(503).json({ error: 'AI_NOT_CONFIGURED' })
 
   const live = getLiveData()
-  // Live snapshot from MSME-DI Bihar (Develpment Commissioner, Ministry of MSME, GoI) —
-  // canonical source for Bihar MSME schemes, contacts, cluster info, training programs.
-  const dcMsmeText = await getDcMsmeBiharSnapshot()
+  // Kick off the DC-MSME Bihar fetch in parallel — we'll await right before
+  // we need to compose the system prompt, so it overlaps with the langInstruction /
+  // profile setup work below.
+  const dcMsmePromise = getDcMsmeBiharSnapshot()
 
   const langMap = {
     Hindi:      'Respond in Hindi (Devanagari script). Mix in English technical terms (loan, scheme, subsidy, GST, Udyam) naturally — that is how Bihar entrepreneurs speak. Keep it conversational, respectful (use "aap", not "tum"), and warm.',
@@ -123,7 +124,11 @@ export default async function handler(req, res) {
     userProfile.needs?.length  && `Current needs: ${userProfile.needs.join(', ')}`,
   ].filter(Boolean).join('\n')
 
-  const liveSection = `LIVE BIHAR MSME ECOSYSTEM SNAPSHOT (as of ${live.today}, ${live.fy}):
+  // dcmsme fetch was kicked off at the top; await its result here so it has
+  // overlapped with the profile/language work above.
+  const dcMsmeText = await dcMsmePromise
+
+  const liveSection =`LIVE BIHAR MSME ECOSYSTEM SNAPSHOT (as of ${live.today}, ${live.fy}):
 • Cumulative Udyam registrations from Bihar: ~${live.stats.udyamRegistrationsBihar.toLocaleString('en-IN')}
 • Active State + Central schemes currently open to Bihar MSMEs: ${live.stats.activeSchemesBihar}
 • RAMP programme disbursement progress: ₹${live.stats.rampDisbursedCr.toLocaleString('en-IN')} Cr of ₹${live.stats.rampTargetCr.toLocaleString('en-IN')} Cr target

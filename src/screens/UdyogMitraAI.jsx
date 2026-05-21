@@ -70,7 +70,7 @@ function localFallback(msg, profile, language) {
 
 const QUICK_HI = [
   '🎯 Mere liye best scheme',
-  '💰 ₹10 lakh loan kahaan se',
+  '💰 ₹10 lakh loan kahaan se milega',
   '⚖️ Payment nahi mil rahi',
   '🎓 Skill training',
 ]
@@ -132,12 +132,12 @@ export default function UdyogMitraAI() {
     const dist = profile?.district || ''
     if (appLanguage === 'English') {
       return name
-        ? `Hello ${name}! 🙏 I'm Udyog Mitra — your AI copilot for Bihar MSMEs.${sector ? ` I see you're in **${sector}**${dist ? ` at **${dist}**` : ''} — I'll tailor everything 🎯` : ''}`
-        : `🙏 Namaskar! I'm Udyog Mitra — Bihar's AI copilot for MSMEs. Ask me anything — schemes, loans, DPR, grievances.`
+        ? `Hello ${name}! 🙏 I'm your AI Udyog Mitra.${sector ? ` I see you're in **${sector}**${dist ? ` at **${dist}**` : ''} — I'll tailor everything 🎯` : ''}`
+        : `🙏 Namaskar! I'm your AI Udyog Mitra — Bihar MSMEs ke liye. Ask me anything — schemes, loans, DPR, grievances.`
     }
     return name
-      ? `नमस्कार ${name} जी! 🙏 Main Udyog Mitra hu — aapka apna AI saathi.${sector ? ` Aap **${sector}** me hain${dist ? `, **${dist}** se` : ''} — personalise karunga 🎯` : ''}`
-      : `🙏 नमस्कार! Main Udyog Mitra hu — Bihar MSMEs ka AI copilot. Mujhse poochho — scheme, loan, DPR, grievance.`
+      ? `नमस्कार ${name} जी! 🙏 Main aapka AI Udyog Mitra hu.${sector ? ` Aap **${sector}** me hain${dist ? `, **${dist}** se` : ''} — personalise karunga 🎯` : ''}`
+      : `🙏 नमस्कार! Main aapka AI Udyog Mitra hu — Bihar MSMEs ke liye. Mujhse poochho — scheme, loan, DPR, grievance.`
   }
 
   useEffect(() => {

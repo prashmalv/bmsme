@@ -437,8 +437,8 @@
     const name = state.profile.name ? ' ' + state.profile.name + ' जी' : ''
     const sector = state.profile.sector ? ` Aap **${state.profile.sector}** me hain${state.profile.district ? `, **${state.profile.district}** se` : ''} — har baat aapke business ke liye personalise karunga 🎯` : ''
     const text = state.language === 'English'
-      ? `🙏 Namaskar${name}! I'm Udyog Mitra AI — Bihar's MSME copilot. Ask me anything — schemes, loans, DPR, grievances.${sector}`
-      : `🙏 नमस्कार${name}! Main Udyog Mitra hu — Bihar MSMEs ka AI copilot. Mujhse poochho — scheme, loan, DPR, grievance.${sector}`
+      ? `🙏 Namaskar${name}! I'm your AI Udyog Mitra — Bihar MSMEs ke liye. Ask me anything — schemes, loans, DPR, grievances.${sector}`
+      : `🙏 नमस्कार${name}! Main aapka AI Udyog Mitra hu — Bihar MSMEs ke liye. Mujhse poochho — scheme, loan, DPR, grievance.${sector}`
     pushBot(text)
     renderQuickChips()
   }
