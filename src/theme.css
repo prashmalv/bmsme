@@ -1,0 +1,307 @@
+/* ============================================================
+   BIHAR UDYOG MITRA AI — DESIGN TOKENS
+   Palette: Bihar Govt blue + Indian flag saffron + green
+   ============================================================ */
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;font-family:'Inter','Noto Sans Devanagari','Segoe UI','Roboto',Arial,sans-serif;font-size:14px;line-height:1.5;overflow-x:hidden}
+body{background:#e8eef5}
+button{cursor:pointer;font-family:inherit;border:none;background:none;outline:none}
+input,textarea,select{font-family:inherit}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ---- THEME VARIABLES (Bihar govt palette) ---- */
+:root{
+  --primary:#1a4d8f;            /* Bihar govt deep blue */
+  --primary-dark:#0f3263;
+  --primary-darker:#091e3c;
+  --primary-ghost:rgba(26,77,143,0.10);
+  --primary-light:#dde7f4;
+
+  --accent:#e6a817;             /* Indian saffron */
+  --accent-dark:#b8830e;
+  --accent-light:#fdf3d6;
+
+  --secondary:#00833e;          /* Indian flag green */
+  --secondary-dark:#005f2c;
+  --secondary-light:#dff5e7;
+
+  --danger-red:#c41e3a;         /* Ashoka chakra red */
+
+  --bg:#f3f6fb;
+  --surface:#ffffff;
+  --soft:#eaf0f8;
+  --soft-2:#dde7f4;
+  --border:#cdd9ec;
+  --ink:#0c1e3a;
+  --ink-soft:#2c3e5e;
+  --ink-mute:#697a96;
+
+  --grad-hero:linear-gradient(135deg,#091e3c 0%,#1a4d8f 55%,#e6a817 100%);
+  --grad-card:linear-gradient(180deg,#eaf0f8 0%,#ffffff 100%);
+  --grad-saffron:linear-gradient(135deg,#e6a817 0%,#f5c54b 100%);
+  --grad-green:linear-gradient(135deg,#00833e 0%,#3fa66a 100%);
+
+  --shadow-1:0 2px 8px rgba(26,77,143,0.08);
+  --shadow-2:0 8px 24px rgba(26,77,143,0.18);
+  --shadow-3:0 20px 48px rgba(9,30,60,0.28);
+
+  --success:#10B981;--success-bg:#D1FAE5;--success-text:#065F46;
+  --warning:#F59E0B;--warning-bg:#FEF3C7;--warning-text:#92400E;
+  --danger:#EF4444;--danger-bg:#FEE2E2;--danger-text:#991B1B;
+}
+
+/* ---- APP SHELL ---- */
+.app-shell{
+  max-width:440px;
+  min-height:100dvh;
+  margin:0 auto;
+  background:var(--bg);
+  color:var(--ink);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 0 40px rgba(0,0,0,0.13);
+}
+@media(min-width:480px){
+  body{background:#dde2eb}
+  .app-shell{min-height:100dvh;max-height:100dvh;overflow:hidden}
+}
+
+/* ---- SCROLL ---- */
+.screen-scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+.screen-scroll::-webkit-scrollbar{display:none}
+.content{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:12px}
+.content::-webkit-scrollbar{display:none}
+.content.no-pad{padding:0}
+
+/* ---- STATUS BAR ---- */
+.statusbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 18px 6px;font-size:11px;font-weight:700;
+  color:var(--ink);height:30px;flex-shrink:0;background:transparent;
+}
+.statusbar.light{color:#fff}
+
+/* ---- APP BAR ---- */
+.appbar{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 14px;background:var(--surface);
+  border-bottom:1px solid var(--border);flex-shrink:0;
+  min-height:50px;
+}
+.appbar.grad{background:var(--grad-hero);border-bottom:none;color:#fff}
+.appbar.grad .appbar-title,.appbar.grad .appbar-back,.appbar.grad .appbar-action{color:#fff}
+.appbar.officer{background:linear-gradient(135deg,#091e3c,#1a4d8f);border-bottom:1px solid #334155;color:#fff}
+.appbar.officer .appbar-title,.appbar.officer .appbar-back,.appbar.officer .appbar-action{color:#fff}
+.appbar-back{font-size:18px;color:var(--ink);width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:50%;transition:background 0.15s}
+.appbar-back:active{background:var(--soft)}
+.appbar-title{font-size:15px;font-weight:800;color:var(--ink);flex:1;letter-spacing:-0.2px}
+.appbar-sub{font-size:10.5px;font-weight:600;color:var(--ink-mute);margin-top:1px}
+.appbar.grad .appbar-sub,.appbar.officer .appbar-sub{color:rgba(255,255,255,0.85)}
+.appbar-action{font-size:15px;color:var(--ink-soft);width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+
+/* ---- BOTTOM NAV ---- */
+.bottomnav{
+  display:flex;justify-content:space-around;align-items:center;
+  background:var(--surface);border-top:1px solid var(--border);
+  padding:6px 4px 10px;flex-shrink:0;position:relative;min-height:58px;
+}
+.bottomnav.dark{background:#0b1c34;border-top:1px solid #1e3056}
+.bn-item{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  font-size:9.5px;color:var(--ink-mute);font-weight:600;flex:1;
+  padding:2px 0;border-radius:8px;transition:color 0.15s;background:transparent;border:none;
+}
+.bn-item .bn-ico{font-size:20px;line-height:1}
+.bn-item.active{color:var(--primary)}
+.bottomnav.dark .bn-item{color:#94A3B8}
+.bottomnav.dark .bn-item.active{color:#e6a817}
+
+/* ---- BUTTONS ---- */
+.btn-pri{
+  width:100%;padding:13px 16px;border:none;border-radius:12px;
+  background:var(--grad-hero);color:#fff;font-size:14px;font-weight:800;
+  cursor:pointer;box-shadow:var(--shadow-2);transition:transform 0.15s;
+}
+.btn-pri:active{transform:scale(0.985)}
+.btn-pri:disabled{opacity:0.55;cursor:not-allowed;transform:none}
+.btn-sec{
+  width:100%;padding:12px 16px;border:1.5px solid var(--primary);border-radius:12px;
+  background:#fff;color:var(--primary);font-size:13.5px;font-weight:800;cursor:pointer;
+}
+.btn-ghost{
+  padding:8px 14px;border:1px solid var(--border);border-radius:10px;
+  background:#fff;color:var(--ink-soft);font-size:12px;font-weight:700;cursor:pointer;
+}
+
+/* ---- INPUTS ---- */
+.input{
+  display:flex;align-items:center;gap:10px;
+  border:1.5px solid var(--border);border-radius:12px;background:#fff;
+  padding:10px 14px;transition:border 0.15s;
+}
+.input.focused{border-color:var(--primary)}
+.input input,.input textarea{
+  flex:1;border:none;outline:none;background:transparent;font-size:13.5px;color:var(--ink);
+}
+.input .ic{font-size:16px;color:var(--ink-mute);flex-shrink:0}
+
+/* ---- CHIPS ---- */
+.chip{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 10px;border-radius:20px;font-size:11px;font-weight:700;line-height:1.3;
+}
+.chip-primary{background:var(--primary-ghost);color:var(--primary-dark)}
+.chip-neutral{background:var(--soft);color:var(--ink-soft);border:1px solid var(--border)}
+.chip-saffron{background:var(--accent-light);color:var(--accent-dark)}
+.chip-green{background:var(--secondary-light);color:var(--secondary-dark)}
+.chip-danger{background:var(--danger-bg);color:var(--danger-text)}
+
+/* ---- CARDS ---- */
+.card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:14px;box-shadow:var(--shadow-1);
+}
+.card-soft{background:var(--soft);border:1px solid var(--border);border-radius:14px;padding:14px}
+.card-hero{
+  position:relative;border-radius:16px;overflow:hidden;
+  background:var(--grad-hero);color:#fff;padding:16px;box-shadow:var(--shadow-2);
+}
+
+/* ---- HERO PATTERN BG (Ashoka chakra hint) ---- */
+.pattern-bg{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(255,255,255,0.18) 0, transparent 35%),
+                   radial-gradient(circle at 10% 110%, rgba(230,168,23,0.25) 0, transparent 40%);
+  pointer-events:none;
+}
+
+/* ---- CHAT BUBBLES ---- */
+.chat-msg-bot{display:flex;gap:8px;align-items:flex-end;animation:fadeIn 0.25s ease-out}
+.chat-msg-user{display:flex;justify-content:flex-end;animation:fadeIn 0.25s ease-out}
+.chat-avatar{
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  background:var(--grad-hero);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;
+}
+.chat-bubble-bot{
+  background:#fff;border:1px solid var(--border);
+  border-radius:14px 14px 14px 4px;padding:10px 14px;
+  font-size:13px;color:var(--ink);max-width:84%;
+  box-shadow:var(--shadow-1);line-height:1.55;
+}
+.chat-bubble-user{
+  background:var(--grad-hero);color:#fff;
+  border-radius:14px 14px 4px 14px;padding:9px 14px;
+  font-size:13px;max-width:80%;line-height:1.5;font-weight:500;
+}
+.chat-input-bar{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 12px 14px;background:#fff;border-top:1px solid var(--border);flex-shrink:0;
+}
+.chat-input{
+  flex:1;border:1.5px solid var(--border);border-radius:24px;
+  padding:10px 16px;font-size:13.5px;color:var(--ink);outline:none;background:var(--soft);
+}
+.chat-input:focus{border-color:var(--primary);background:#fff}
+
+/* ---- KPI / STAT TILES ---- */
+.kpi{
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  padding:10px 12px;display:flex;flex-direction:column;gap:2px;
+}
+.kpi-label{font-size:10.5px;font-weight:600;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.5px}
+.kpi-value{font-size:18px;font-weight:900;color:var(--ink);line-height:1.1}
+.kpi-delta{font-size:10.5px;font-weight:700}
+.kpi-delta.up{color:var(--success-text)}
+.kpi-delta.down{color:var(--danger-text)}
+
+/* ---- TOAST ---- */
+.toast{
+  position:fixed;bottom:90px;left:50%;transform:translateX(-50%);
+  background:var(--primary-darker);color:#fff;padding:10px 18px;border-radius:24px;
+  font-size:12.5px;font-weight:700;z-index:9999;box-shadow:var(--shadow-3);
+  animation:slideUp 0.25s ease-out;
+}
+
+/* ---- ANIM ---- */
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{transform:translate(-50%, 20px);opacity:0}to{transform:translate(-50%, 0);opacity:1}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+@keyframes typing{0%,100%{opacity:0.3}50%{opacity:1}}
+@keyframes shimmer{
+  0%{background-position:-200px 0}
+  100%{background-position:calc(200px + 100%) 0}
+}
+@keyframes pulseRing{
+  0%{box-shadow:0 0 0 0 rgba(239,68,68,0.6)}
+  100%{box-shadow:0 0 0 14px rgba(239,68,68,0)}
+}
+
+.shimmer{
+  background:linear-gradient(90deg, var(--soft) 0%, #fff 50%, var(--soft) 100%);
+  background-size:200px 100%;animation:shimmer 1.6s linear infinite;
+}
+
+/* ---- ANIMATED VOICE WAVES ---- */
+.voice-waves{display:flex;align-items:center;gap:3px}
+.voice-waves span{
+  width:3px;border-radius:3px;background:#fff;
+  animation:vw 1s ease-in-out infinite;
+}
+.voice-waves span:nth-child(1){height:8px;animation-delay:0s}
+.voice-waves span:nth-child(2){height:14px;animation-delay:0.15s}
+.voice-waves span:nth-child(3){height:18px;animation-delay:0.3s}
+.voice-waves span:nth-child(4){height:14px;animation-delay:0.45s}
+.voice-waves span:nth-child(5){height:8px;animation-delay:0.6s}
+@keyframes vw{0%,100%{transform:scaleY(0.4)}50%{transform:scaleY(1.1)}}
+
+/* ---- AI THINKING DOTS ---- */
+.ai-thinking{display:inline-flex;gap:4px;align-items:center}
+.ai-thinking span{
+  width:6px;height:6px;border-radius:50%;background:var(--primary);
+  animation:typing 1s infinite;
+}
+.ai-thinking span:nth-child(2){animation-delay:0.18s}
+.ai-thinking span:nth-child(3){animation-delay:0.36s}
+
+/* ---- DIVIDERS ---- */
+.section-title{
+  font-size:11.5px;font-weight:800;color:var(--ink-mute);
+  text-transform:uppercase;letter-spacing:0.6px;
+  display:flex;align-items:center;gap:8px;margin-top:6px;
+}
+.section-title::after{
+  content:'';flex:1;height:1px;background:var(--border);
+}
+
+/* ---- BADGES ---- */
+.badge-live{
+  display:inline-flex;align-items:center;gap:5px;
+  background:#fee2e2;color:#991b1b;font-size:9.5px;font-weight:800;
+  padding:3px 7px;border-radius:6px;
+}
+.badge-live::before{
+  content:'';width:6px;height:6px;border-radius:50%;background:#dc2626;
+  animation:pulse 1.2s ease-in-out infinite;
+}
+
+/* ---- PROGRESS BAR ---- */
+.prog{height:6px;background:var(--soft);border-radius:6px;overflow:hidden;width:100%}
+.prog-bar{height:100%;background:var(--grad-hero);border-radius:6px;transition:width 0.4s ease-out}
+
+/* ---- AVATAR ---- */
+.avatar-circle{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--grad-hero);color:#fff;font-weight:800;font-size:16px;
+  flex-shrink:0;
+}
+
+/* ---- TABLE ---- */
+.tbl{width:100%;border-collapse:collapse;font-size:11.5px}
+.tbl th{background:var(--primary-ghost);color:var(--primary-dark);font-weight:800;text-align:left;padding:8px 10px;border-bottom:1.5px solid var(--border)}
+.tbl td{padding:7px 10px;border-bottom:1px solid var(--soft);color:var(--ink-soft);vertical-align:top}

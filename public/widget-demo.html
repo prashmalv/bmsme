@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bihar Udyog Mitra AI · Widget Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Inter','Noto Sans Devanagari',sans-serif;
+      background:linear-gradient(135deg,#091e3c 0%,#1a4d8f 50%,#e6a817 100%);
+      min-height:100vh;color:#fff;padding:40px 20px;
+    }
+    .container{max-width:760px;margin:0 auto}
+    .badge{
+      display:inline-block;background:rgba(255,255,255,0.18);
+      border:1px solid rgba(255,255,255,0.35);border-radius:14px;
+      padding:6px 14px;font-size:11px;font-weight:800;letter-spacing:1.5px;
+      text-transform:uppercase;margin-bottom:16px;
+    }
+    h1{font-size:36px;font-weight:900;letter-spacing:-0.5px;line-height:1.15}
+    h1 .hi{display:block;font-size:22px;font-weight:700;opacity:0.9;margin-top:4px}
+    .lead{font-size:15px;opacity:0.92;line-height:1.6;margin-top:14px;max-width:580px}
+    .card{
+      background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.2);border-radius:16px;
+      padding:20px;margin-top:24px;
+    }
+    .card h3{font-size:14px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:10px}
+    .card p{font-size:13px;line-height:1.6;opacity:0.92}
+    .arrow{
+      position:fixed;bottom:120px;right:120px;font-size:14px;font-weight:800;
+      background:#fff;color:#1a4d8f;padding:10px 16px;border-radius:18px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.2);transform:rotate(-3deg);
+      animation:bob 1.8s ease-in-out infinite;
+    }
+    @keyframes bob{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-6px)}}
+    .arrow::after{content:'↘️';margin-left:6px;font-size:16px}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+    .feat{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5}
+    .feat .ico{font-size:22px;flex-shrink:0}
+    code{background:rgba(0,0,0,0.3);padding:2px 7px;border-radius:5px;font-size:12px;font-family:ui-monospace,monospace}
+    @media(max-width:600px){.arrow{display:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="badge">🇮🇳 Department of Industries · Bihar</span>
+    <h1>
+      Udyog Mitra AI Widget
+      <span class="hi">उद्योग मित्र AI · MSME Copilot</span>
+    </h1>
+    <p class="lead">
+      Embeddable conversational AI for Bihar MSMEs. Tap the chat bubble at the bottom-right — speak in Hindi, English, Bhojpuri, or Maithili. Try: <em>"मेरा silk ka business hai Bhagalpur me, ₹10 lakh chahiye"</em>
+    </p>
+
+    <div class="card">
+      <h3>🎯 What this widget does</h3>
+      <div class="features">
+        <div class="feat"><span class="ico">🎤</span><div><b>Tap to speak</b> — Web Speech API transcribes Hindi/English/Bhojpuri/Maithili and auto-sends.</div></div>
+        <div class="feat"><span class="ico">📍</span><div><b>Profile-aware</b> — Advanced tab captures district, sector, category for personalised answers.</div></div>
+        <div class="feat"><span class="ico">🌐</span><div><b>Live data</b> — Pulls latest info from <code>dcmsme.gov.in/Bihar.aspx</code>.</div></div>
+        <div class="feat"><span class="ico">🧠</span><div><b>Claude AI</b> — Anthropic's Claude Haiku 4.5 / Sonnet 4.6 with rich Bihar MSME system prompt.</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Embed on any page</h3>
+      <p>Drop this script anywhere in your HTML before <code>&lt;/body&gt;</code>:</p>
+      <p style="margin-top:8px;background:rgba(0,0,0,0.35);padding:12px;border-radius:8px;font-family:ui-monospace,monospace;font-size:11.5px;overflow-x:auto;line-height:1.5">
+        &lt;script src="/widget/bihar-udyog-mitra-widget.js"<br>&nbsp;&nbsp;&nbsp;&nbsp;data-api="/api/chat"<br>&nbsp;&nbsp;&nbsp;&nbsp;data-language="Hindi"<br>&nbsp;&nbsp;&nbsp;&nbsp;defer&gt;&lt;/script&gt;
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🧪 Try these prompts</h3>
+      <p>• मेरा silk ka business hai Bhagalpur me, ₹10 lakh chahiye kya help mile govt ya bank se?<br>
+         • Bihar Mukhyamantri Udyami Yojana ka eligibility kya hai?<br>
+         • Mera buyer 6 mahine se payment nahi de raha — MSEFC me kaise file karu?<br>
+         • Makhana processing unit ke liye PMFME scheme detail batao</p>
+    </div>
+  </div>
+
+  <div class="arrow">Tap here to start</div>
+
+  <script src="/widget/bihar-udyog-mitra-widget.js" data-api="/api/chat" data-language="Hindi" defer></script>
+</body>
+</html>
