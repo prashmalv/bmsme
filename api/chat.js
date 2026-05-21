@@ -1,3 +1,7 @@
+// Vercel function configuration — modern syntax (per-file)
+// 60s gives Claude room for cold starts + dcmsme fetch + retry chain.
+export const maxDuration = 60
+
 // Module-level cache for live data — survives across warm Vercel invocations
 let liveCache = null
 let liveCacheTime = 0
@@ -85,6 +89,21 @@ function getLiveData() {
 }
 
 export default async function handler(req, res) {
+  // Top-level try/catch so unexpected errors return JSON 500 instead of
+  // Vercel's HTML "A server error has occurred" page (which breaks the client's
+  // res.json() parse and surfaces as "Unexpected token 'A'...").
+  try {
+    return await innerHandler(req, res)
+  } catch (err) {
+    console.error('Udyog Mitra AI top-level error:', err && err.stack ? err.stack : err)
+    if (!res.headersSent) {
+      res.setHeader('Access-Control-Allow-Origin', '*')
+      return res.status(500).json({ error: 'AI_UNAVAILABLE', message: (err && err.message) || 'unknown' })
+    }
+  }
+}
+
+async function innerHandler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
@@ -98,8 +117,8 @@ export default async function handler(req, res) {
   const live = getLiveData()
   // Kick off the DC-MSME Bihar fetch in parallel — we'll await right before
   // we need to compose the system prompt, so it overlaps with the langInstruction /
-  // profile setup work below.
-  const dcMsmePromise = getDcMsmeBiharSnapshot()
+  // profile setup work below. .catch() ensures it never rejects the outer flow.
+  const dcMsmePromise = getDcMsmeBiharSnapshot().catch(() => null)
 
   const langMap = {
     Hindi:      'Respond in Hindi (Devanagari script). Mix in English technical terms (loan, scheme, subsidy, GST, Udyam) naturally — that is how Bihar entrepreneurs speak. Keep it conversational, respectful (use "aap", not "tum"), and warm.',
@@ -425,7 +444,10 @@ Be the best public-sector AI an Indian state has ever deployed. Make Bihar proud
       'x-api-key': apiKey,
       'anthropic-version': '2023-06-01',
     },
-    body: JSON.stringify({ model, max_tokens: 1024, system, messages: anthropicMessages }),
+    body: JSON.stringify({ model, max_tokens: 800, system, messages: anthropicMessages }),
+    // Cap each Anthropic attempt at 28s so we always have budget for one retry +
+    // graceful error within the 60s function ceiling.
+    signal: AbortSignal.timeout(28000),
   })
 
   const isRetryable = (status, msg) =>
