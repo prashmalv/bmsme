@@ -165,7 +165,8 @@ export default function UdyogMitraAI() {
         const notice = code === 'AI_OVERLOADED' ? '⚡ Live AI busy — quick offline answer:\n\n' : ''
         setMsgs(prev => [...prev, { from: 'bot', text: notice + localFallback(text, profile, appLanguageRef.current) }])
       } else {
-        setMsgs(prev => [...prev, { from: 'bot', text: '⚠️ Connection issue. Try again. 🔄' }])
+        const detail = (err && err.message) ? ` (${err.message})` : ''
+        setMsgs(prev => [...prev, { from: 'bot', text: `⚠️ Connection issue${detail}. Hard-refresh browser (Cmd+Shift+R) ya dev server restart kareiye. 🔄` }])
       }
     }
   }
