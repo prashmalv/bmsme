@@ -82,7 +82,7 @@ export default function GrievanceFile() {
             </div>
 
             <button onClick={() => navigate('/grievances')} className="btn-pri">📩 View my grievances</button>
-            <button onClick={() => navigate('/ai-chat', { state: { initialMsg: `Mein ${submitted.id} grievance file kiya hai (${submitted.categoryLabel}). Iska escalation timeline aur agle steps kya hain?` } })} className="btn-sec">🤖 Ask AI about next steps</button>
+            <button onClick={() => navigate('/ai-chat', { state: { initialMsg: `Mein ${submitted.id} grievance file kiya hai (${submitted.categoryLabel}). Iska escalation timeline aur agle steps kya hain?` } })} className="btn-sec">🧑‍💼 Ask AI about next steps</button>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function GrievanceFile() {
                   <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--ink)' }}>{c.label}</div>
                   {cat?.code === c.code && (
                     <div style={{ fontSize: 10.5, color: 'var(--primary-dark)', marginTop: 4, lineHeight: 1.5 }}>
-                      🤖 AI routes to: <b>{c.route}</b>
+                      🧑‍💼 AI routes to: <b>{c.route}</b>
                     </div>
                   )}
                 </div>
@@ -161,7 +161,7 @@ export default function GrievanceFile() {
               <button onClick={submit} className="btn-pri" disabled={!against || !desc}>
                 ⚖️ Submit & AI auto-route →
               </button>
-              <button onClick={() => navigate('/ai-chat', { state: { initialMsg: `Mujhe ${cat.label} ki problem hai against "${against || '...'}". Best way to handle this — step by step batao.` } })} className="btn-sec">🤖 Pehle AI se baat karein</button>
+              <button onClick={() => navigate('/ai-chat', { state: { initialMsg: `Mujhe ${cat.label} ki problem hai against "${against || '...'}". Best way to handle this — step by step batao.` } })} className="btn-sec">🧑‍💼 Pehle AI se baat karein</button>
             </>
           )}
 

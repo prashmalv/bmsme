@@ -137,7 +137,7 @@ export default function DPRBuilder() {
               <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
                 {step > 0 && <button onClick={() => setStep(step - 1)} className="btn-ghost" style={{ flex: 1 }}>← Back</button>}
                 <button onClick={next} className="btn-pri" disabled={!val.trim()} style={{ flex: 2 }}>
-                  {step === STEPS.length - 1 ? '🤖 Generate DPR with AI →' : 'Next →'}
+                  {step === STEPS.length - 1 ? '🧑‍💼 Generate DPR with AI →' : 'Next →'}
                 </button>
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function DPRBuilder() {
                 <button onClick={copyDraft} className="btn-pri" style={{ flex: 2 }}>📋 Copy DPR</button>
                 <button onClick={restart} className="btn-ghost" style={{ flex: 1 }}>↺ Redo</button>
               </div>
-              <button onClick={() => navigate('/ai-chat', { state: { initialMsg: 'Mere DPR me kya improvements karu — banker ki nazar se review karke 5 actionable suggestions do.' } })} className="btn-sec">🤖 Ask AI to review my DPR</button>
+              <button onClick={() => navigate('/ai-chat', { state: { initialMsg: 'Mere DPR me kya improvements karu — banker ki nazar se review karke 5 actionable suggestions do.' } })} className="btn-sec">🧑‍💼 Ask AI to review my DPR</button>
             </>
           )}
 

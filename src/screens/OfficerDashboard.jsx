@@ -139,7 +139,7 @@ export default function OfficerDashboard() {
           {tab === 'queue' && (
             <>
               <div style={{ background: 'var(--primary-ghost)', border: '1px solid var(--primary-light)', borderRadius: 12, padding: '10px 12px', display: 'flex', gap: 10, alignItems: 'center' }}>
-                <span style={{ fontSize: 20 }}>🤖</span>
+                <span style={{ fontSize: 20 }}>🧑‍💼</span>
                 <div style={{ fontSize: 11, color: 'var(--primary-dark)', lineHeight: 1.5, fontWeight: 600 }}>
                   AI pre-screens every application — green/amber/red flags with reasoning. Focus on reds first.
                 </div>
@@ -156,7 +156,7 @@ export default function OfficerDashboard() {
                     <div style={{ fontSize: 14, fontWeight: 800, color: 'var(--ink)' }}>{a.applicant} <span style={{ fontWeight: 600, fontSize: 12, color: 'var(--ink-mute)' }}>· {a.scheme}</span></div>
                     <div style={{ fontSize: 11, color: 'var(--ink-soft)', marginTop: 4 }}>{a.sector} · {a.district} · {a.amount}</div>
                     <div style={{ fontSize: 11, color: f.color, marginTop: 8, lineHeight: 1.5, fontWeight: 600, background: f.bg, padding: '6px 10px', borderRadius: 8 }}>
-                      🤖 {a.flagText}
+                      🧑‍💼 {a.flagText}
                     </div>
                     <div style={{ display: 'flex', gap: 6, marginTop: 10 }}>
                       <button className="btn-ghost" style={{ flex: 1 }}>👀 Review</button>
@@ -232,7 +232,7 @@ export default function OfficerDashboard() {
         position: 'fixed', bottom: 18, right: 'calc(max(16px, (100vw - 440px) / 2 + 16px))',
         width: 54, height: 54, borderRadius: '50%', background: 'var(--grad-hero)', color: '#fff',
         border: 'none', boxShadow: 'var(--shadow-2)', fontSize: 22, cursor: 'pointer', zIndex: 100,
-      }}>🤖</button>
+      }}>🧑‍💼</button>
 
       {askOpen && (
         <div style={{
@@ -243,7 +243,7 @@ export default function OfficerDashboard() {
           display: 'flex', flexDirection: 'column', overflow: 'hidden',
         }}>
           <div style={{ background: 'var(--grad-hero)', color: '#fff', padding: '10px 14px', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <span style={{ fontSize: 18 }}>🤖</span>
+            <span style={{ fontSize: 18 }}>🧑‍💼</span>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 13, fontWeight: 800 }}>Officer AI Assistant</div>
               <div style={{ fontSize: 10, opacity: 0.85 }}>Triaging · pattern detection · policy lookup</div>
@@ -257,10 +257,10 @@ export default function OfficerDashboard() {
               </div>
             )}
             {msgs.map((m, i) => m.from === 'bot'
-              ? <div key={i} className="chat-msg-bot"><div className="chat-avatar" style={{ width: 26, height: 26, fontSize: 12 }}>🤖</div><div className="chat-bubble-bot" style={{ fontSize: 12 }}><RenderText text={m.text} /></div></div>
+              ? <div key={i} className="chat-msg-bot"><div className="chat-avatar" style={{ width: 26, height: 26, fontSize: 12 }}>🧑‍💼</div><div className="chat-bubble-bot" style={{ fontSize: 12 }}><RenderText text={m.text} /></div></div>
               : <div key={i} className="chat-msg-user"><div className="chat-bubble-user" style={{ fontSize: 12 }}>{m.text}</div></div>
             )}
-            {typing && <div className="chat-msg-bot"><div className="chat-avatar" style={{ width: 26, height: 26, fontSize: 12 }}>🤖</div><div className="chat-bubble-bot"><div className="ai-thinking"><span/><span/><span/></div></div></div>}
+            {typing && <div className="chat-msg-bot"><div className="chat-avatar" style={{ width: 26, height: 26, fontSize: 12 }}>🧑‍💼</div><div className="chat-bubble-bot"><div className="ai-thinking"><span/><span/><span/></div></div></div>}
             <div ref={bottomRef} />
           </div>
           <div style={{ padding: 8, borderTop: '1px solid var(--border)', background: '#fff', display: 'flex', gap: 6 }}>

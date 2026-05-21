@@ -12,7 +12,6 @@ export default function BottomNav({ hideNearby = false }) {
   const items = [
     { ico: '🏠', label: t.home,        path: '/home' },
     { ico: '🎯', label: t.schemes,     path: '/schemes' },
-    { ico: '🤖', label: t.chat,        path: '/ai-chat' },
     { ico: '📩', label: t.grievance,   path: '/grievances' },
     { ico: '👤', label: t.profile,     path: '/profile-setup' },
   ]

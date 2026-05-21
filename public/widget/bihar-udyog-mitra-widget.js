@@ -319,14 +319,14 @@
   const launcher = document.createElement('button')
   launcher.className = 'launcher'
   launcher.title = 'Udyog Mitra AI'
-  launcher.innerHTML = '🤖<span class="dot"></span>'
+  launcher.innerHTML = '🧑‍💼<span class="dot"></span>'
   root.appendChild(launcher)
 
   const panel = document.createElement('div')
   panel.className = 'panel'
   panel.innerHTML = `
     <div class="header">
-      <div class="avatar">🤖</div>
+      <div class="avatar">🧑‍💼</div>
       <div class="meta">
         <div class="title">Udyog Mitra AI</div>
         <div class="sub" id="sub">● Online · ${state.language}</div>
@@ -448,7 +448,7 @@
     state.msgs.push({ from: 'bot', text })
     const div = document.createElement('div')
     div.className = 'msg-bot'
-    div.innerHTML = `<div class="av">🤖</div><div class="bub-bot">${renderMarkdown(text)}</div>`
+    div.innerHTML = `<div class="av">🧑‍💼</div><div class="bub-bot">${renderMarkdown(text)}</div>`
     scrollEl.appendChild(div)
     scrollEl.scrollTop = scrollEl.scrollHeight
   }
@@ -473,7 +473,7 @@
     const div = document.createElement('div')
     div.className = 'msg-bot'
     div.id = 'thinkingRow'
-    div.innerHTML = `<div class="av">🤖</div><div class="bub-bot"><div class="thinking"><span></span><span></span><span></span></div></div>`
+    div.innerHTML = `<div class="av">🧑‍💼</div><div class="bub-bot"><div class="thinking"><span></span><span></span><span></span></div></div>`
     scrollEl.appendChild(div)
     scrollEl.scrollTop = scrollEl.scrollHeight
   }

@@ -107,7 +107,7 @@ export default function Login() {
           )}
 
           <div style={{ marginTop: 18, background: 'var(--soft)', borderRadius: 12, padding: 12 }}>
-            <div style={{ fontSize: 11, fontWeight: 800, color: 'var(--ink-soft)', marginBottom: 6 }}>🤖 Why we ask for this</div>
+            <div style={{ fontSize: 11, fontWeight: 800, color: 'var(--ink-soft)', marginBottom: 6 }}>🧑‍💼 Why we ask for this</div>
             <div style={{ fontSize: 10.5, color: 'var(--ink-mute)', lineHeight: 1.5 }}>
               Your mobile is linked to Aadhaar (for free) and used by Udyog Mitra AI to:
               <br/>· auto-fetch your Udyam Registration (if any)

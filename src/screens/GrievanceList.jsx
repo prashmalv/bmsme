@@ -46,11 +46,11 @@ export default function GrievanceList() {
                     <b>Against:</b> {g.against || '—'} {g.amount ? `· ₹${g.amount}` : ''}
                   </div>
                   <div style={{ fontSize: 10.5, color: 'var(--ink-mute)', marginTop: 6, lineHeight: 1.45 }}>
-                    🤖 Routed to: <b>{g.route}</b>
+                    🧑‍💼 Routed to: <b>{g.route}</b>
                   </div>
                   <div style={{ display: 'flex', gap: 6, marginTop: 10 }}>
                     <a href={g.portal} target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ flex: 1, textDecoration: 'none', textAlign: 'center' }}>🌐 Open portal</a>
-                    <button onClick={() => navigate('/ai-chat', { state: { initialMsg: `${g.id} grievance ke baare me — kya hua ab tak, aur next steps?` } })} className="btn-ghost" style={{ flex: 1 }}>🤖 Ask AI</button>
+                    <button onClick={() => navigate('/ai-chat', { state: { initialMsg: `${g.id} grievance ke baare me — kya hua ab tak, aur next steps?` } })} className="btn-ghost" style={{ flex: 1 }}>🧑‍💼 Ask AI</button>
                   </div>
                 </div>
               )

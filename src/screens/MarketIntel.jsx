@@ -123,7 +123,7 @@ export default function MarketIntel() {
           })}
 
           <div className="card" style={{ background: 'var(--grad-card)', borderLeft: '4px solid var(--primary)' }}>
-            <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--primary-dark)' }}>🤖 Drill deeper with AI</div>
+            <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--primary-dark)' }}>🧑‍💼 Drill deeper with AI</div>
             <div style={{ fontSize: 11.5, color: 'var(--ink-soft)', marginTop: 4, lineHeight: 1.5 }}>
               Ask Udyog Mitra AI for sector-level forecasts, competitor intelligence, or specific buyer leads.
             </div>
@@ -131,7 +131,7 @@ export default function MarketIntel() {
               onClick={() => navigate('/ai-chat', { state: { initialMsg: `Mere sector (${profile?.sector || sector}) aur ${district || 'Bihar'} cluster ke liye next 6 months ka detailed forecast — top opportunities, threats, aur 3 actionable steps.` } })}
               className="btn-pri"
               style={{ marginTop: 10, fontSize: 12.5, padding: '10px 14px' }}
-            >🤖 Ask for 6-month forecast →</button>
+            >🧑‍💼 Ask for 6-month forecast →</button>
           </div>
 
           <div style={{ height: 8 }} />

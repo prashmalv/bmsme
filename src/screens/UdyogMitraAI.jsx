@@ -224,7 +224,7 @@ export default function UdyogMitraAI() {
       <div style={{ background: 'var(--grad-hero)', padding: '10px 14px', color: '#fff', display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
         <button onClick={() => navigate('/home')} style={{ fontSize: 18, color: '#fff', background: 'none', border: 'none', cursor: 'pointer' }}>←</button>
         <div style={{ width: 38, height: 38, borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, position: 'relative', flexShrink: 0 }}>
-          🤖
+          🧑‍💼
           <span style={{ position: 'absolute', bottom: -1, right: -1, width: 11, height: 11, background: '#10B981', border: '2px solid var(--primary)', borderRadius: '50%' }} />
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -297,7 +297,7 @@ export default function UdyogMitraAI() {
             {msgs.map((m, i) =>
               m.from === 'bot' ? (
                 <div key={i} className="chat-msg-bot">
-                  <div className="chat-avatar">🤖</div>
+                  <div className="chat-avatar">🧑‍💼</div>
                   <div className="chat-bubble-bot"><RenderText text={m.text} /></div>
                 </div>
               ) : (
@@ -306,7 +306,7 @@ export default function UdyogMitraAI() {
             )}
             {typing && (
               <div className="chat-msg-bot">
-                <div className="chat-avatar">🤖</div>
+                <div className="chat-avatar">🧑‍💼</div>
                 <div className="chat-bubble-bot" style={{ padding: '12px 16px' }}>
                   <div className="ai-thinking"><span /><span /><span /></div>
                 </div>

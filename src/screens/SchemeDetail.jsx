@@ -102,7 +102,7 @@ export default function SchemeDetail() {
           <button
             onClick={() => navigate('/ai-chat', { state: { initialMsg: `${name} ke baare me detail me batao — eligibility, documents, step-by-step process for someone with my profile.` } })}
             className="btn-sec"
-          >🤖 Ask AI to walk me through</button>
+          >🧑‍💼 Ask AI to walk me through</button>
 
           <button
             onClick={() => navigate('/dpr', { state: { schemeCode: scheme.code } })}

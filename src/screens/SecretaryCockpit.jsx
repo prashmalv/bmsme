@@ -112,7 +112,7 @@ export default function SecretaryCockpit() {
                 <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--ink-mute)' }}>📍 {a.district}</span>
               </div>
               <div style={{ fontSize: 12.5, color: 'var(--ink)', marginTop: 6, lineHeight: 1.5 }}>{a.text}</div>
-              <button onClick={() => ask(`Root-cause analysis for: ${a.text}`)} className="btn-ghost" style={{ marginTop: 8, fontSize: 11 }}>🤖 AI root-cause →</button>
+              <button onClick={() => ask(`Root-cause analysis for: ${a.text}`)} className="btn-ghost" style={{ marginTop: 8, fontSize: 11 }}>🧑‍💼 AI root-cause →</button>
             </div>
           ))}
 
@@ -145,7 +145,7 @@ export default function SecretaryCockpit() {
           )}
 
           {/* Ask Bihar AI */}
-          <div className="section-title"><span>🤖 Ask Bihar — Conversational Intelligence</span></div>
+          <div className="section-title"><span>🧑‍💼 Ask Bihar — Conversational Intelligence</span></div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
             {BRIEFING_TEMPLATES.map(q => (
@@ -157,10 +157,10 @@ export default function SecretaryCockpit() {
             {msgs.length === 0 && !typing ? null : (
               <div style={{ padding: 12, display: 'flex', flexDirection: 'column', gap: 8, background: 'var(--soft)' }}>
                 {msgs.map((m, i) => m.from === 'bot'
-                  ? <div key={i} className="chat-msg-bot"><div className="chat-avatar">🤖</div><div className="chat-bubble-bot"><RenderText text={m.text} /></div></div>
+                  ? <div key={i} className="chat-msg-bot"><div className="chat-avatar">🧑‍💼</div><div className="chat-bubble-bot"><RenderText text={m.text} /></div></div>
                   : <div key={i} className="chat-msg-user"><div className="chat-bubble-user">{m.text}</div></div>
                 )}
-                {typing && <div className="chat-msg-bot"><div className="chat-avatar">🤖</div><div className="chat-bubble-bot"><div className="ai-thinking"><span/><span/><span/></div></div></div>}
+                {typing && <div className="chat-msg-bot"><div className="chat-avatar">🧑‍💼</div><div className="chat-bubble-bot"><div className="ai-thinking"><span/><span/><span/></div></div></div>}
                 <div ref={bottomRef} />
               </div>
             )}

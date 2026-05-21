@@ -27,7 +27,7 @@ export default function MSMEHome() {
     : 'Apni profile complete kareiye for personalised AI advice'
 
   const quickActions = [
-    { ico: '🤖', label: 'Udyog Mitra AI',   sub: 'Bolke ya likhke poochho',     path: '/ai-chat',         color: 'var(--grad-hero)' },
+    { ico: '🧑‍💼', label: 'Udyog Mitra AI',   sub: 'Bolke ya likhke poochho',     path: '/ai-chat',         color: 'var(--grad-hero)' },
     { ico: '🎯', label: 'Scheme Matcher',   sub: 'AI eligibility scoring',     path: '/schemes',         color: 'var(--grad-green)' },
     { ico: '📄', label: 'DPR Builder',      sub: 'Bankable project report',    path: '/dpr',             color: 'var(--grad-saffron)' },
     { ico: '⚖️', label: 'File Grievance',   sub: 'MSEFC · TReDS · Single Window', path: '/grievance/new', color: 'linear-gradient(135deg,#c41e3a,#e84855)' },
@@ -57,22 +57,6 @@ export default function MSMEHome() {
             </div>
           </div>
 
-          {/* AI hint banner */}
-          <div
-            onClick={() => navigate('/ai-chat')}
-            style={{
-              marginTop: 14, background: 'rgba(255,255,255,0.13)', backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(255,255,255,0.28)', borderRadius: 14,
-              padding: '10px 12px', display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer',
-            }}
-          >
-            <div style={{ width: 34, height: 34, borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 17, flexShrink: 0 }}>🤖</div>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: 12, fontWeight: 800 }}>Udyog Mitra AI ready hai</div>
-              <div style={{ fontSize: 10.5, opacity: 0.9, marginTop: 1 }}>Try: "Mera silk ka business hai Bhagalpur me, loan chahiye" 🎤</div>
-            </div>
-            <span style={{ fontSize: 16, opacity: 0.85 }}>→</span>
-          </div>
         </div>
       </div>
 

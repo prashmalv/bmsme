@@ -83,11 +83,11 @@ export default function SchemeMatcher() {
           ))}
 
           <div className="card" style={{ background: 'var(--grad-card)', borderLeft: '4px solid var(--primary)' }}>
-            <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--primary-dark)' }}>🤖 Ask Udyog Mitra AI</div>
+            <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--primary-dark)' }}>🧑‍💼 Ask Udyog Mitra AI</div>
             <div style={{ fontSize: 11.5, color: 'var(--ink-soft)', marginTop: 4, lineHeight: 1.5 }}>
               Confused which scheme to pick? Chat with Udyog Mitra AI — it knows your full profile and can compare schemes side-by-side.
             </div>
-            <button onClick={() => navigate('/ai-chat', { state: { initialMsg: 'Mere profile ke liye top 3 schemes compare karein side-by-side with eligibility, subsidy and how to apply.' } })} className="btn-pri" style={{ marginTop: 10, padding: '10px 14px', fontSize: 12.5 }}>🤖 Compare top 3 with AI →</button>
+            <button onClick={() => navigate('/ai-chat', { state: { initialMsg: 'Mere profile ke liye top 3 schemes compare karein side-by-side with eligibility, subsidy and how to apply.' } })} className="btn-pri" style={{ marginTop: 10, padding: '10px 14px', fontSize: 12.5 }}>🧑‍💼 Compare top 3 with AI →</button>
           </div>
         </div>
       </div>
