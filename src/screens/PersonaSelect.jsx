@@ -55,8 +55,8 @@ export default function PersonaSelect() {
             <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: 1.5, opacity: 0.9 }}>BIHAR · CIMS PLATFORM</div>
             <LanguageSelector light />
           </div>
-          <div style={{ fontSize: 22, fontWeight: 900, lineHeight: 1.2 }}>Aap kaun hain?</div>
-          <div style={{ fontSize: 12, opacity: 0.9, marginTop: 4 }}>Choose your role — your AI copilot is tailored to it.</div>
+          <div style={{ fontSize: 22, fontWeight: 900, lineHeight: 1.2 }}>आगे बढ़ने के लिए केटेगरी चुनें</div>
+          <div style={{ fontSize: 12, opacity: 0.9, marginTop: 4 }}>Choose your category to proceed — your AI copilot is tailored to it.</div>
         </div>
       </div>
 
